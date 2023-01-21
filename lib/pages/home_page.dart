@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_catalog/drawer/drawer.dart';
+import 'package:flutter_catalog/widget/drawer.dart';
 
 class HomePage extends StatelessWidget {
   final int days = 30;
@@ -10,8 +10,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Catalog".toUpperCase(),
+        title: const Text(
+          "Catalog App",
         ),
       ),
       body: const Center(
