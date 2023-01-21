@@ -11,8 +11,8 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Catalog".toUpperCase()),
       ),
-      body: Center(
-        child: Text("Welcome to $days days of $name"),
+      body: const Center(
+        child: Text("Welcome to 30 days of flutter"),
       ),
     );
   }
