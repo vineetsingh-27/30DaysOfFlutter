@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/models/catalog.dart';
 import 'package:flutter_catalog/widget/drawer.dart';
+import 'package:flutter_catalog/widget/item_widget.dart';
 
 class HomePage extends StatelessWidget {
-  final int days = 30;
-  final String name = "Vineet";
-  const HomePage({super.key});
+  final dummyList = List.generate(4, (index) => CatalogModel.items[0]);
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +15,16 @@ class HomePage extends StatelessWidget {
           "Catalog App",
         ),
       ),
-      body: const Center(
-        child: Text("Welcome to 30 days of flutter"),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: dummyList.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: dummyList[index],
+            );
+          },
+        ),
       ),
       drawer: const MyDrawer(),
     );
